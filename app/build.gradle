@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+apply from: 'signingconfigs.gradle'
+
+ext {
+    supportLibVersion = '26.0.1'
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.1"
+
+    defaultConfig {
+        applicationId "com.example.android.downloadablefonts"
+        minSdkVersion 16
+        targetSdkVersion 26
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+
+    dependencies {
+        compile "com.android.support:appcompat-v7:$supportLibVersion"
+        compile "com.android.support:design:$supportLibVersion"
+        compile "com.android.support:cardview-v7:$supportLibVersion"
+    }
+}

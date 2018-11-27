@@ -1,0 +1,11 @@
+.idea/
+build/
+app/build
+app/debug
+app/debug_keystore
+app/signingconfigs.gradle
+kotlinApp
+.gradle
+*.iml
+app/*.iml
+local.properties

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  - Change to a custom authority, so our content-provider is the one that will be queried for this font
+  - Use the package of our content-provider
+  - The query name, just leave it as it is. But it should be your font name? Or somth you will match
+  in the query
+  - Certificates. This is tricky, either create another embedded apk and sign it with some cert (you will
+  later provide there in certs), or use the one you used to sign your apk, but that's not recommended
+
+  You will have to ignore a font validation error lint rule, as they only admit the ones inside their support package
+  (see: https://github.com/JetBrains/android/blob/master/android/src/com/android/tools/idea/lint/AndroidLintFontValidationErrorInspection.java)
+-->
+<font-family xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:fontProviderAuthority="com.saantiaguilera.testing.authority"
+    app:fontProviderPackage="com.example.android.downloadablefonts"
+    app:fontProviderQuery="Lobster Two"
+    app:fontProviderCerts="@array/my_own_certs"
+    android:fontProviderAuthority="com.saantiaguilera.testing.authority"
+    android:fontProviderPackage="com.example.android.downloadablefonts"
+    android:fontProviderQuery="Lobster Two"
+    android:fontProviderCerts="@array/my_own_certs"
+    tools:ignore="FontValidationError" />

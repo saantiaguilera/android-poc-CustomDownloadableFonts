@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Paths that the content-provider will expose.
+    Google for fonts expects a uri of name=file. So that's mandatory
+    On our side we just use the path 'fonts/' because we will write our fonts in that subdirectory
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <files-path name="file" path="fonts/"/>
+</paths>
